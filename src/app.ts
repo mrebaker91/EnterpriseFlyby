@@ -25,7 +25,7 @@ export default class EnterpriseFlyby {
 
 		// Create a new actor with no mesh, but some text.  Enterprise Kit
 		this.kitItem = MRE.Actor.CreateFromLibrary(this.context, {
-			resourceId: 'artifact:1782182185873178812'
+			resourceId: 'artifact:1840915634855084279'
 		});
 		this.pulseActor(this.kitItem);
 	}
