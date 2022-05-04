@@ -32,7 +32,7 @@ export default class EnterpriseFlyby {
 //
 	// asyncronous function so we can use await function
 	private async pulseActor(actor: MRE.Actor){
-		actor.transform.local.scale = { x: 0, y: 0, z: 0 } as MRE.Vector3;
+		actor.transform.local.scale = { x: 20, y: 20, z: 20 } as MRE.Vector3;
 		//define variables for size management inside loops
 		let Xpos = 0;
 		let Ypos = 0;
@@ -46,33 +46,33 @@ export default class EnterpriseFlyby {
 			//set up MRE just outside of the skybox
 			actor.transform.local.position = { x: Xpos , y: Ypos, z: Zloop } as MRE.Vector3;
 				//first loop scales the enterprise into view in two phases fast then slow
-				while (Yloop < 25) {
-					await new Promise(f => setTimeout(f, 100));
-					if (Yloop < 10) {
-						Yloop = Yloop + .001;
-					}
-					else {
-						Yloop = Yloop + .01;
-					}
-					Ypos = Ypos + .03;
-					Zloop = Zloop - .01;
-					actor.transform.local.scale = { x: Yloop, y: Yloop, z: Yloop } as MRE.Vector3;
-					actor.transform.local.position = { x: Xpos , y: Ypos, z: Zloop } as MRE.Vector3;					
-				}
-				//second loop enterpise goes across world on Z vector
-				while (Zloop < 1200) {
-					//await sleep(1000);
-					await new Promise(f => setTimeout(f, .1));
-					Zloop = Zloop + .01;
-					actor.transform.local.position = { x: Xpos , y: Ypos, z: Zloop } as MRE.Vector3;
-				}
-				//third loop enterprise scales out of sight before it reaches skybox
-				while (Yloop > 0) {
-					await new Promise(f => setTimeout(f, .1));
-					Yloop = Yloop - .01;
-					Ypos = Ypos - .03;
-					actor.transform.local.scale = { x: Yloop, y: Yloop, z: Yloop } as MRE.Vector3;
-					actor.transform.local.position = { x: Xpos , y: Ypos, z: Zloop } as MRE.Vector3;					
-				}
-				}
+//				while (Yloop < 25) {
+//					await new Promise(f => setTimeout(f, 100));
+//					if (Yloop < 10) {
+//						Yloop = Yloop + .001;
+//					}
+//					else {
+//						Yloop = Yloop + .01;
+//					}
+//					Ypos = Ypos + .03;
+//					Zloop = Zloop - .01;
+//					actor.transform.local.scale = { x: Yloop, y: Yloop, z: Yloop } as MRE.Vector3;
+//					actor.transform.local.position = { x: Xpos , y: Ypos, z: Zloop } as MRE.Vector3;					
+//				}
+//				//second loop enterpise goes across world on Z vector
+//				while (Zloop < 1200) {
+//					//await sleep(1000);
+//					await new Promise(f => setTimeout(f, .1));
+//					Zloop = Zloop + .01;
+//					actor.transform.local.position = { x: Xpos , y: Ypos, z: Zloop } as MRE.Vector3;
+//				}
+//				//third loop enterprise scales out of sight before it reaches skybox
+//				while (Yloop > 0) {
+//					await new Promise(f => setTimeout(f, .1));
+//					Yloop = Yloop - .01;
+//					Ypos = Ypos - .03;
+//					actor.transform.local.scale = { x: Yloop, y: Yloop, z: Yloop } as MRE.Vector3;
+//					actor.transform.local.position = { x: Xpos , y: Ypos, z: Zloop } as MRE.Vector3;					
+//				}
+//				}
 }
