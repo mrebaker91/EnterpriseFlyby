@@ -47,7 +47,7 @@ export default class EnterpriseFlyby {
 			actor.transform.local.position = { x: Xpos , y: Ypos, z: Zloop } as MRE.Vector3;
 				//first loop scales the enterprise into view in two phases fast then slow
 				while (Yloop < 25) {
-					await new Promise(f => setTimeout(f, 100));
+					await new Promise(f => setTimeout(f, 1));
 					if (Yloop < 10) {
 						Yloop = Yloop + .001;
 					}
