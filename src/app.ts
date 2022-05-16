@@ -44,6 +44,6 @@ export default class EnterpriseFlyby {
 			Zloop = -800;
 			Ypos = 200;
 			//set up MRE just outside of the skybox
-			actor.transform.local.position = { x: 0 , y: 0, z: -1200 } as MRE.Vector3;
+			actor.transform.local.position = { x: 0 , y: 0, z: -600 } as MRE.Vector3;
 	}		
 }
