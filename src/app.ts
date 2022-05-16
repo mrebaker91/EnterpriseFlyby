@@ -32,7 +32,7 @@ export default class EnterpriseFlyby {
 //
 	// asyncronous function so we can use await function
 	private async pulseActor(actor: MRE.Actor){
-		actor.transform.local.scale = { x: 20, y: 20, z: 20 } as MRE.Vector3;
+		actor.transform.local.scale = { x: 25, y: 25, z: 25 } as MRE.Vector3;
 		//define variables for size management inside loops
 		let Xpos = 0;
 		let Ypos = 0;
@@ -44,6 +44,6 @@ export default class EnterpriseFlyby {
 			Zloop = -800;
 			Ypos = 200;
 			//set up MRE just outside of the skybox
-			actor.transform.local.position = { x: 0 , y: 0, z: 0 } as MRE.Vector3;
+			actor.transform.local.position = { x: 0 , y: 0, z: -1200 } as MRE.Vector3;
 	}		
 }
