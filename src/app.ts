@@ -66,6 +66,14 @@ export default class EnterpriseFlyby {
 					Zloop = Zloop + .1;
 					actor.transform.local.position = { x: Xpos , y: Ypos, z: Zloop } as MRE.Vector3;
 				}
+						//second loop enterpise goes across world on Z vector
+				while (Zloop < 600) {
+					//await sleep(1000);
+					await new Promise(f => setTimeout(f, .001));
+					Zloop = Zloop + .1;
+					actor.transform.local.position = { x: Xpos , y: Ypos, z: Zloop } as MRE.Vector3;
+				}
+		
 				//third loop enterprise scales out of sight before it reaches skybox
 				while (Yloop > 0) {
 					await new Promise(f => setTimeout(f, .1));
